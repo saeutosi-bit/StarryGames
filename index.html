@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 Starry Horizons — Official</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loadingScreen">
+        <div class="loader-animation-container">
+            <div class="loader-letter left">S</div>
+            <div class="loader-letter right">G</div>
+            <img class="loader-icon-final" 
+                 src="https://i.oneme.ru/i?r=BUE2sh_eZW7g8kugOdIm2Not7Mv3X3qGmT5BSgJhZuLjkjVeJAGx8R8H32DRH8-vz_K-lVzsyQysV3DaVqjHCp2E&expires=1785712333025" 
+                 alt="Game Icon">
+            <div class="loader-title">Starry Horizons</div>
+        </div>
+    </div>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- ===== SPACE BACKGROUND ===== -->
+    <div class="space-bg">
+        <div class="deep-space"></div>
+        <div class="stars-layer s1" id="starsLayer1"></div>
+        <div class="stars-layer s2" id="starsLayer2"></div>
+        <div class="stars-layer s3" id="starsLayer3"></div>
+        <div id="flaresContainer"></div>
+        <div id="shootingStarsContainer"></div>
+        <div class="nebula n1"></div>
+        <div class="nebula n2"></div>
+        <div class="nebula n3"></div>
+        <div class="nebula n4"></div>
+        <div class="galaxy g1"></div>
+        <div class="planet p1"><div class="planet-rings"></div></div>
+        <div class="planet p2"></div>
+        <div class="planet p3"></div>
+        <div class="asteroid" style="top:30%;left:10%;animation-duration:35s;"></div>
+        <div class="asteroid" style="top:70%;left:80%;animation-duration:45s;animation-delay:5s;"></div>
+        <div class="asteroid" style="top:50%;left:50%;animation-duration:50s;animation-delay:10s;"></div>
+    </div>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌌</span>
+                Starry Horizons
+            </div>
+            <div class="header-right">
+                <a href="https://www.roblox.com/communities/599180268/Starry-Horizons-Community#!/about" target="_blank" class="badge badge-community">🌐 Community</a>
+                <a href="https://www.roblox.com/games/137646999386122/Starry-Horizons" target="_blank" class="badge badge-play">▶ Play</a>
+                <span class="badge badge-age">13+</span>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="home">🏠 Home</button>
+            <button class="tab-btn" data-tab="update">🚀 Update</button>
+            <button class="tab-btn" data-tab="bulletin">📰 Bulletin</button>
+            <button class="tab-btn" data-tab="games">🎮 Mini-Games</button>
+        </div>
+
+        <main class="main-card">
+
+            <!-- ===== TAB: HOME ===== -->
+            <div class="tab-content active" id="tab-home">
+
+                <div class="intro-block">
+                    <div class="tagline">✨ Welcome to the Star Islands</div>
+                    <div class="sub">Explore, fight, level up — and become a legend with the community</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>📜</span> About the Game
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="card-block">
+                        <p>🔥 Patches for <strong>EVERY DAY 🔥</strong></p>
+                        <p>🌌 You are on the <strong>Star Islands</strong> 🏝️</p>
+                        <p>⚔️ Fight enemies and level up. 📊</p>
+                        <p>💸 Buy new weapons and items.</p>
+                        <p>⭐ Maximum level — <strong>375</strong></p>
+                        <p>🌆 <strong>10</strong> unique locations</p>
+                        <p>☺️ You gain experience every <strong>5 minutes</strong>. Sometimes — bonuses to money or gems.</p>
+                        <p style="margin-top: 8px; color: #b9ceff;">🔄 Updates are released <strong>every week</strong></p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>📢</span> Announcements
+                        <span class="live-badge">● LIVE</span>
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="card-block" style="background: rgba(10, 18, 40, 0.4);">
+                        <div class="announcements-list" id="announcementsContainer">
+                            <div style="text-align:center;padding:16px;color:#4f659a;">📭 No announcements</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>🎯</span> New Events (IN NEXT UPDATE)
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="card-block" style="background: rgba(10, 18, 40, 0.4);">
+                        <p style="font-weight: 600; color: #fad974;">Blood Event</p>
+                        <ul style="list-style: none; padding-left: 6px; margin-top: 6px;">
+                            <li style="padding: 4px 0;">✦ New Event</li>
+                            <li style="padding: 4px 0;">✦ New Swords</li>
+                            <li style="padding: 4px 0;">✦ New Wheel </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>⚡</span> Next Update
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="card-block" style="background: rgba(8, 14, 30, 0.4); padding: 16px 20px;">
+                        <div class="grid-2col">
+                            <div class="col">
+                                <h4>🌟 NEWS - SOON</h4>
+                                <ul>
+                                    <li>New Swords</li>
+                                    <li>New Big Island</li>     
+                                    <li>New Max Lvl</li>                     
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h4>⚙️ SYSTEM</h4>
+                                <ul>
+                                    <li>Accessory</li>
+                                    <li>Raid System</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>🎮</span> Active Codes
+                        <span class="live-badge">● LIVE :3 </span>
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="card-block" style="background: rgba(10, 18, 40, 0.4);">
+                        <div class="codes-grid" id="codesContainer">
+                            <div style="text-align:center;padding:16px;color:#4f659a;">✨ No codes available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 16px 32px; background: rgba(10, 18, 40, 0.3); padding: 10px 22px; border-radius: 60px; border: 1px solid rgba(50, 75, 120, 0.1); margin-top: 18px;">
+                    <span>🎤 Voice Chat: <span style="color: #a8d08d;">Supported</span></span>
+                    <span>📷 Camera: <span style="color: #a8d08d;">Supported</span></span>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>👾</span> Creators
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="creators">
+                        <span class="card">
+                            <span class="role">👑 Owner</span>
+                            <span class="name">@Dev_Noggia</span>
+                            <a href="https://www.roblox.com/users/5724338894/profile" target="_blank" class="profile-link">👤 →</a>
+                            <span style="color: #b8caf0; font-size:0.65rem;">[ that's me! ]</span>
+                        </span>
+                        <span class="card">
+                            <span class="role">🛠️ Builder</span>
+                            <span class="name">@ps_tonmai</span>
+                            <a href="https://www.roblox.com/users/3211042806/profile" target="_blank" class="profile-link">👤 →</a>
+                            <span style="color: #b8caf0; font-size:0.65rem;">[ my friend ]</span>
+                        </span>
+                        <span class="card">
+                            <span class="role">⚙️ Tester</span>
+                            <span class="name">@PEHAL_1234</span>
+                            <a href="https://www.roblox.com/users/4634912757/profile" target="_blank" class="profile-link">👤 →</a>
+                            <span style="color: #b8caf0; font-size:0.65rem;">[ my _-_-_ ]</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">
+                        <span>🏷️</span> Tags
+                        <span class="accent-line"></span>
+                    </div>
+                    <div class="tag-group">
+                        <span class="tag">RPG</span>
+                        <span class="tag">Sword</span>
+                        <span class="tag">Star</span>
+                        <span class="tag">Horizons</span>
+                        <span class="tag">Event</span>
+                        <span class="tag">Open World</span>
+                        <span class="tag">Survival</span>
+                        <span class="tag">Multiplayer</span>
+                        <span class="tag">Adventure</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; background: rgba(6, 12, 28, 0.4); padding: 8px 22px; border-radius: 60px; border: 1px solid rgba(50, 75, 120, 0.1); margin-top: 14px;">
+                    <span>🎮 Genre: <strong style="color: #f0db8a;">RPG</strong></span>
+                    <span>📖 Subgenre: <strong style="color: #f0db8a;">Open World & Survival RPG</strong></span>
+                </div>
+
+                <div style="margin: 16px 0 6px; color: #6a80b5; font-size: 0.85rem; padding-left: 4px;">
+                    🗓️ Created: July 3, 2026
+                </div>
+
+                <div class="links-block">
+                    <a href="https://x.com/StarryGamesRblx" target="_blank">🐦 X (Twitter)</a>
+                    <a href="https://www.youtube.com/@Starry_Gamess" target="_blank">▶️ YouTube</a>
+                    <a href="https://discord.gg/MANnQHMST" target="_blank">💬 Discord Server</a>
+                </div>
+
+                <div class="meta-line">
+                    <span>⭐ Starry Horizons <span class="heart">❤</span> 2026</span>
+                    <span>🐝 "Starry Game's" Community</span>
+                    <span>✨ v1.0</span>
+                </div>
+
+            </div>
+
+            <!-- ===== TAB: UPDATE ===== -->
+            <div class="tab-content" id="tab-update">
+                <div class="update-container">
+                    <h1 class="update-title">🪐 NEXT UPDATE</h1>
+                    <p class="update-description">
+                     Info is Coming<br>
+                    </p>               
+                    <div class="countdown-box">
+                        <div class="countdown-label">⏳ Launch Countdown</div>
+                        <div class="countdown-grid" id="countdownGrid">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days">00</div>
+                                <div class="countdown-label-small">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours">00</div>
+                                <div class="countdown-label-small">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes">00</div>
+                                <div class="countdown-label-small">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds">00</div>
+                                <div class="countdown-label-small">Seconds</div>
+                            </div>
+                        </div>
+                        <div class="countdown-status" id="countdownStatus">
+                            UPDATE 2.0 : <span class="highlight">August 2, 2026 — 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TAB: BULLETIN ===== -->
+            <div class="tab-content" id="tab-bulletin">
+
+                <div class="intro-block" style="border-bottom-color: rgba(255,215,0,0.15);">
+                    <div class="tagline" style="font-size:1.6rem;">Game Bulletin</div>
+                    <div class="sub">Stay up to date with all the latest news and updates from Starry Horizons.</div>
+                </div>
+
+                <div class="bulletin-posts-vertical">
+
+                    <!-- ================== ISSUE #1 ================== -->
+                    <div class="issue-1">
+                        <div style="text-align: center; padding: 20px 0 10px 0; border-bottom: 2px solid rgba(100, 180, 255, 0.2); margin-bottom: 20px;">
+                            <h2 style="font-size: 2.4rem; font-weight: 800; color: #6bcbff; letter-spacing: 1px; text-shadow: 0 0 20px rgba(100, 180, 255, 0.1);">#1 What's Happening</h2>
+                        </div>
+
+                        <!-- Post 1 -->
+                        <div class="bulletin-post">
+                            <img class="bulletin-post-image" src="https://cdn.shopify.com/s/files/1/0830/7635/0259/files/Bird.png" alt="New Epic Boss">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">◼︎ Dark Wanderer</h2>
+                                <div class="bulletin-post-text">
+                                    <p>A dark figure was spotted on Otroven, immediately dubbed the Dark Page.</p>
+                                    <p>He's searching for fragments of some strange artifact and wanders the islands looking for it.</p>
+                                    <p>Everyone thinks he's crazy, although Nodgia thinks he wants to open a portal to other dimensions using the machine he's currently building.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">📜 Legend's</h2>
+                                <div class="bulletin-post-text">
+                                    <p><strong>Legend : How the portal to the spirit world opened</strong>.</p>
+                                    <p>Long ago, Master Daigo created the Mask of Destruction that could destroy the entire world, but to protect people, he used it to open a portal to the spirit world and made a deal with the Spirit King himself that Daigo would become his pawn in exchange for the King keeping the Mask for the rest of his life.</p>
+                                    <p><br>You will find out the continuation of this story on <strong>August 2nd</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">Error... Player.blood</h2>
+                                <div class="bulletin-post-text">
+                                    <p><strong>This is not a drill.</strong></p>
+                                    <p>Errrrrrrrorrr....</p>
+                                    <p>Stabilization of the post.... </p>
+                                    <p><strong>20%</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================== ISSUE #2 ================== -->
+                    <div class="issue-2">
+                        <div style="text-align: center; padding: 40px 0 10px 0; border-top: 2px solid rgba(150, 50, 255, 0.1); border-bottom: 2px solid rgba(150, 50, 255, 0.2); margin-top: 20px; margin-bottom: 20px;">
+                            <h2 style="font-size: 2.4rem; font-weight: 800; color: #c084fc; letter-spacing: 1px; text-shadow: 0 0 20px rgba(150, 50, 255, 0.1);">#2 World's</h2>
+                        </div>
+
+                        <!-- Post 1 -->
+                        <div class="bulletin-post">
+                            <img class="bulletin-post-image" src="https://cdn.shopify.com/s/files/1/0830/7635/0259/files/LightningStorm.png" alt="Mystery Island">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">😈 FINAL! New Epic Boss</h2>
+                                <div class="bulletin-post-text">
+                                    <p>The ultimate challenge awaits! A new Epic Boss has been discovered in the Star Islands. Players must gather their strongest allies to take down this fearsome creature.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 2 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">◼︎ Dark Wanderer</h2>
+                                <div class="bulletin-post-text">
+                                    <p>The Dark Wanderer has recovered the Artifact Shards. Now he and his partner, Daigo's son Loki, are brewing a <strong>Stobelizing Material</strong> for this artifact.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">🚀 Update 2.0 — FINAL of The 1 World</h2>
+                                <div class="bulletin-post-text">
+                                    <p>UPDATE IN : <strong>02.08.26 18:00</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================== ISSUE #3 (HACKER) ================== -->
+                    <div class="hacker-issue-wrapper" id="hackerIssue">
+                        <h2 class="hacker-issue-title">#3 HACKER IN GAME!</h2>
+                        
+                        <div class="hacker-post">
+                            <div class="hacker-post-content">
+                                <h2 class="hacker-post-title">> SYS_INITIATED... CONNECTION LOST</h2>
+                                <div class="hacker-video-placeholder">
+                                    <div class="hacker-video-placeholder" style="height: auto; padding-bottom: 0; border: 2px solid rgba(0, 255, 0, 0.2); border-radius: 12px; overflow: hidden; background: #000;">
+                                        <img src="https://i.oneme.ru/i?r=BTE2sh_eZW7g8kugOdIm2NotufXVDsSoPDsxV-mxt5HKdxS5jY8bGeY5bMIf9qY4IyI" 
+                                             alt="Hacker Image" 
+                                             style="width: 100%; height: auto; display: block; object-fit: cover;">
+                                    </div>
+                                </div>
+                                <div class="hacker-post-text">
+                                    <span class="code-line">> 01001110 01101111 00100000 01110011 01101001 01100111 01101110 01100001 01101100</span>
+                                    <span class="code-line">> <span class="corrupted">ERROR 404 </span>: HELP</span>
+                                    <span class="code-line">> The <strong>DARK WANDERER</strong> has breached the firewall.</span>
+                                    <span class="code-line">> <span class="corrupted">CRITICAL ALERT</span>: Artifact Shards are reassembling.</span>
+                                    <span class="code-line">> Daigo's son <strong>LOKI</strong> is not who he claims to be.</span>
+                                    <span class="code-line">> <span class="corrupted">WARNING</span>: Stobelizing Material has reached critical mass.</span>
+                                    <span class="code-line" style="color:#6c006c; animation: glitchText 0.1s infinite;">> [ REDACTED ]   Declassification 35% ... </span>
+                                    <span class="code-line">> <strong>The Mask of Destruction</strong> has been no located.</span>
+                                    <span class="code-line" style="color:#ff0000; animation: glitchText 0.3s infinite;">> ███████ ████ ████████ ████</span>
+                                    <span class="code-line">> Do not trust the machine. Nodgia is wrong.</span>
+                                    <span class="code-line">> <span class="corrupted">COUNTDOWN INITIATED</span>: 09.08.26 18:00 — <span class="corrupted">THE FINAL EVENT</span></span>
+                                    <span class="code-line" style="color:#ff00ff; animation: glitchText 0.15s infinite;">> [ S Y S T E M   C O M P R O M I S E D ]</span>
+                                    <span class="code-line">> <span class="corrupted">WARNING</span>: This is not a drill.</span>
+                                    <span class="code-line" style="color:#1eff00; animation: glitchText 0.15s infinite;">>NODGIA IS COMING IN ISLAND</span>
+                                    <span class="code-line">> 01001000 01100101 01101100 01110000 00100000 01110101 01110011</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================== ISSUE #4 ================== -->
+                    <div class="issue-4">
+                        <div style="text-align: center; padding: 40px 0 10px 0; border-top: 2px solid rgba(255, 215, 0, 0.1); border-bottom: 2px solid rgba(255, 215, 0, 0.2); margin-top: 20px; margin-bottom: 20px;">
+                            <h2 style="font-size: 2.4rem; font-weight: 800; color: #f7e272; letter-spacing: 1px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.1);">#4 The Awakening</h2>
+                        </div>
+
+                        <!-- Пост 1 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <img class="bulletin-post-image" src="https://cdn.shopify.com/s/files/1/0830/7635/0259/files/PotionBrews.png" alt="Mystery Island">
+                                <h2 class="bulletin-post-title">⚡ The Material is Complete</h2>
+                                <div class="bulletin-post-text">
+                                    <p>The Dark Wanderer and Loki have finally finished their work. The <strong>Stobelizing Material</strong> is fully synthesized. The <strong>Artifact</strong> has been reconstructed.</p>
+                                    <p>They are no longer searching. They are <strong>waiting</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Пост 2 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">📖 The Second Legend</h2>
+                                <div class="bulletin-post-text">
+                                    <p><strong>Legend of the Void King</strong>.</p>
+                                    <p>Long before the Mask of Destruction, there was the Void King — a being born from the emptiness between worlds. He created the <strong>Artifact</strong> as a key to enter the mortal realm. Daigo did not destroy the Void King... he merely <strong>imprisoned</strong> him.</p>
+                                    <p><br>The Artifact is the key. The Material is the fuel. <strong>The Void King is waking up.</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Пост 3 -->
+                        <div class="bulletin-post">
+                            <div class="bulletin-post-content">
+                                <h2 class="bulletin-post-title">🛡️ Nodgia's Call</h2>
+                                <div class="bulletin-post-text">
+                                    <p><strong>This is Nodgia.</strong></p>
+                                    <p>The system is no longer safe. The Wanderer and Loki have gone too far.</p>
+                                    <p>I built this world. I built the <strong>Star Islands</strong>. And I will not let the Void King destroy what we have created.</p>
+                                    <p><br>I am taking control. I am ready to defend the islands. <strong>Prepare for war.</strong></p>
+                                    <p style="color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.2);">— Nodgia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===== TAB: MINI-GAMES (10 GAMES) ===== -->
+            <div class="tab-content" id="tab-games">
+
+                <div class="intro-block" style="border-bottom-color: rgba(255,215,0,0.15);">
+                    <div class="tagline" style="font-size:1.6rem;">🎮 Galactic Mini-Games</div>
+                    <div class="sub">Play these cosmic challenges and test your luck in the Star Islands!</div>
+                </div>
+
+                <div class="games-grid">
+
+                    <!-- GAME 1: GUESS THE NUMBER -->
+                    <div class="game-card">
+                        <h3>🎯 Guess the Star</h3>
+                        <p>Pick a number between 1 and 100.</p>
+                        <input type="number" id="guessInput" class="game-input" placeholder="1-100" min="1" max="100">
+                        <button class="game-btn" id="guessBtn">✨ Launch Guess</button>
+                        <div class="game-result" id="guessResult">🪐 Ready...</div>
+                    </div>
+
+                    <!-- GAME 2: COIN FLIP -->
+                    <div class="game-card">
+                        <h3>🪙 Galactic Flip</h3>
+                        <p>Heads or Tails? Let the cosmos decide!</p>
+                        <div class="coin-container">
+                            <div class="coin" id="coinElement">
+                                <div class="coin-side coin-heads">⭐</div>
+                                <div class="coin-side coin-tails">🌙</div>
+                            </div>
+                        </div>
+                        <button class="game-btn" id="flipBtn">🌀 Flip the Coin</button>
+                        <div class="game-result" id="flipResult">🌌 Call it...</div>
+                    </div>
+
+                    <!-- GAME 3: CLICKER -->
+                    <div class="game-card">
+                        <h3>💥 Star Clicker</h3>
+                        <p>Click the star as fast as you can in 10s!</p>
+                        <button class="clicker-btn" id="clickerBtn">✨</button>
+                        <div class="clicker-stats">
+                            <div>Clicks: <span id="clickCount">0</span></div>
+                            <div>Time: <span id="clickTimeLeft">10s</span></div>
+                        </div>
+                        <button class="game-btn" id="clickerStartBtn">🚀 Start</button>
+                        <div class="game-result" id="clickerResult">Ready?</div>
+                    </div>
+
+                    <!-- GAME 4: MEMORY (COSMIC PAIRS) -->
+                    <div class="game-card">
+                        <h3>🧠 Cosmic Memory</h3>
+                        <p>Find the matching galaxy pairs!</p>
+                        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; width:100%; max-width:180px; margin:0 auto 12px;" id="memoryGrid">
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">🌌</button>
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">🌌</button>
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">🪐</button>
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">🪐</button>
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">⭐</button>
+                            <button class="game-btn" style="padding:8px; font-size:1.2rem; width:100%; min-height:40px;">⭐</button>
+                        </div>
+                        <button class="game-btn" id="memoryResetBtn">🔄 Reset Game</button>
+                        <div class="game-result" id="memoryResult">Find the pairs!</div>
+                    </div>
+
+                    <!-- GAME 5: DICE ROLL -->
+                    <div class="game-card">
+                        <h3>🎲 Cosmic Dice</h3>
+                        <p>Roll the dice and test your destiny!</p>
+                        <div style="font-size:5rem; line-height:1; margin: 5px auto 10px;" id="diceDisplay">⚀</div>
+                        <button class="game-btn" id="diceBtn">🌀 Roll the Dice</button>
+                        <div class="game-result" id="diceResult">⚡ Roll!</div>
+                    </div>
+
+                    <!-- GAME 6: ROCK PAPER SCISSORS -->
+                    <div class="game-card">
+                        <h3>✂️ Galactic RPS</h3>
+                        <p>Battle the AI! Rock, Paper, Scissors.</p>
+                        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:8px;">
+                            <button class="game-btn" data-rps="rock">🪨</button>
+                            <button class="game-btn" data-rps="paper">📄</button>
+                            <button class="game-btn" data-rps="scissors">✂️</button>
+                        </div>
+                        <div class="game-result" id="rpsResult">Choose your weapon!</div>
+                    </div>
+
+                    <!-- GAME 7: GUESS THE SUIT (CARDS) -->
+                    <div class="game-card">
+                        <h3>🃏 Galactic Suit</h3>
+                        <p>Guess the hidden card suit!</p>
+                        <div style="display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-bottom:8px;">
+                            <button class="game-btn" data-suit="♥️">♥️</button>
+                            <button class="game-btn" data-suit="♦️">♦️</button>
+                            <button class="game-btn" data-suit="♣️">♣️</button>
+                            <button class="game-btn" data-suit="♠️">♠️</button>
+                        </div>
+                        <div class="game-result" id="suitResult">Pick a suit!</div>
+                    </div>
+
+                    <!-- GAME 8: REACTION TIME -->
+                    <div class="game-card">
+                        <h3>⏱️ Star Reaction</h3>
+                        <p>Click as fast as you can when the light turns green!</p>
+                        <button class="game-btn" id="reactionBtn" style="width:100%; padding:20px; font-size:1.1rem;">🟢 Wait for Green!</button>
+                        <div class="game-result" id="reactionResult">Get ready...</div>
+                    </div>
+
+                    <!-- GAME 9: MATH BATTLE (ADDITION) -->
+                    <div class="game-card">
+                        <h3>➕ Galaxy Math</h3>
+                        <p>Solve the addition equation!</p>
+                        <div style="font-size:1.8rem; font-weight:bold; margin:5px 0;" id="mathQuestion">5 + 3 = ?</div>
+                        <input type="number" id="mathInput" class="game-input" placeholder="?" min="0" max="99">
+                        <button class="game-btn" id="mathBtn">✨ Solve</button>
+                        <div class="game-result" id="mathResult">Think fast!</div>
+                    </div>
+
+                    <!-- GAME 10: HIGHER OR LOWER -->
+                    <div class="game-card">
+                        <h3>🌪️ Galaxy Force</h3>
+                        <p>Is the next number higher or lower?</p>
+                        <div style="font-size:2.5rem; font-weight:bold; margin:5px 0;" id="forceNumber">5</div>
+                        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:8px;">
+                            <button class="game-btn" data-force="higher">⬆️ Higher</button>
+                            <button class="game-btn" data-force="lower">⬇️ Lower</button>
+                        </div>
+                        <div class="game-result" id="forceResult">Guess!</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <div style="text-align: center; font-size: 0.8rem; color: #f7e272; margin-top: 12px; letter-spacing: 0.5px; opacity: 0.9; padding: 10px 0;">
+            ⭐ Starry Horizons — Official Game Website ⭐
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
