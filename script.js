@@ -179,7 +179,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 //  COUNTDOWN TIMER
 // ================================================================
 
-const targetDate = new Date('August 2, 2026 18:00:00').getTime();
+const targetDate = new Date('August 9, 2026 18:00:00').getTime();
 
 function updateCountdown() {
     const now = Date.now();
